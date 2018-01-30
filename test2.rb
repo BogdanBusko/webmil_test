@@ -30,8 +30,7 @@ def do_magic(str)
   i = 0
 
   str.split('').each do |value|
-    tmp = ''
-    tmp += value * (str.length - i) 
+    tmp = value * (str.length - i) 
     out_str += tmp.downcase.capitalize + "-"
 
     i += 1
