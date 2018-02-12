@@ -1,4 +1,3 @@
-
 require "minitest/autorun"
 
 class Rtest < Minitest::Test
@@ -24,17 +23,5 @@ class Rtest < Minitest::Test
 end
 
 def do_magic(str)
-  return str.upcase if str.length <= 1
-
-  out_str = ''
-  i = 0
-
-  str.split('').each do |value|
-    tmp = value * (str.length - i) 
-    out_str += tmp.downcase.capitalize + "-"
-
-    i += 1
-  end
-
-  out_str.chomp('-')
+  str.split('').map.with_index{ |x, index| (x * (str.length - index)).downcase.capitalize } * '-'
 end
